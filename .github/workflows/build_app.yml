@@ -61,6 +61,9 @@ jobs:
     needs: build
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Update values.yaml with new image
         run: |
           echo "Updating imageName to: ${{env.IMAGE_NAME}}"
