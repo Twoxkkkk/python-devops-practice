@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Docker Image
         run:
-          docker build --tag ${{secrets.DOCKER_USERNAME}}/${{env.IMAGE_NAME}}:${{github.sha}} .
+          docker build --tag ${{secrets.DOCKER_USERNAME}}/${{github.event.repository.name}}:${{github.sha}} .
       
 
 
