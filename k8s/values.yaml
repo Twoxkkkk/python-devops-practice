@@ -1,3 +1,3 @@
 replicaCount: 4
 appName: webapp
-imageName: xowt/python-devops-practice:a1a3ff4724773c5d384bc5abdfc12a01b9dd5c7b
+imageName: xowt/python-devops-practice:01854065fc33007a7d15783fc8e02e05fb739598
