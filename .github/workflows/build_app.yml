@@ -19,7 +19,7 @@ jobs:
       contents: read  
     strategy:
       matrix: 
-        linter: [flake8, pylint]
+        linter: [flake8, pylint, ruff, mypy, pytype, pyright, fixit, pyre]
 
     steps:
       - name: Lint Python Code
