@@ -71,7 +71,7 @@ jobs:
 
       - name: Update values.yaml
         run: |
-          yq -i ".imageName = ${{env.IMAGE_NAME}}" "k8s/values.yaml"
+          yq -i ".imageName = \"${{ env.IMAGE_NAME }}\"" "k8s/values.yaml"
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v5
