@@ -71,9 +71,10 @@ jobs:
 
       - name: Update values.yaml
         run: |
-          echo "${{github.workspace}}"
           echo "$PWD"
-          yq -i ".imageName = \"\${{env.IMAGE_NAME}}\"" ${{github.workspace}}/k8s/values.yaml
+          cd k8s
+          ls -la
+          yq -i ".imageName = \"\${{env.IMAGE_NAME}}\"" values.yaml
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v7
