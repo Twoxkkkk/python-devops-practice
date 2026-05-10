@@ -67,10 +67,15 @@ jobs:
 
           FILE_PATH="./k8s/values.yaml"
 
+          ls
+
+          echo "Navigating to a working directory.."
           cd $GITHUB_WORKSPACE
 
-          sed -i "s#^imageName:.*#imageName: ${IMAGE_NAME}#" "$FILE_PATH"
-          cat values.yaml
+          ls
+
+          #sed -i "s#^imageName:.*#imageName: ${IMAGE_NAME}#" "$FILE_PATH"
+          #cat values.yaml
         env:
           IMAGE_NAME: "${{env.IMAGE_NAME}}"
 
