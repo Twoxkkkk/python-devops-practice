@@ -64,11 +64,12 @@ jobs:
       - name: Update values.yaml with new image
         run: |
           echo "Updating imageName to: ${{env.IMAGE_NAME}}"
+          find . -name "values.yaml"
 
-          FILE_PATH="${{ github.workspace }}/k8s/values.yaml"
+          #FILE_PATH="${{ github.workspace }}/k8s/values.yaml"
 
-          sed -i "s#^imageName:.*#imageName: ${IMAGE_NAME}#" "$FILE_PATH"
-          cat values.yaml
+          #sed -i "s#^imageName:.*#imageName: ${IMAGE_NAME}#" "$FILE_PATH"
+          #cat values.yaml
         env:
           IMAGE_NAME: "${{env.IMAGE_NAME}}"
 
