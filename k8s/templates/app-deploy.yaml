@@ -3,7 +3,6 @@ kind: Deployment
 
 metadata:
   name: {{ .Values.appName }}
-  namespace: default
   labels:
     app: {{ .Values.appName }}
 
