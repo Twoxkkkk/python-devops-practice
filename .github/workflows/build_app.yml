@@ -64,7 +64,7 @@ jobs:
       - name: Update values.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: 'values.yaml'
+          valueFile: 'k8s/values.yaml'
           propertyPath: 'imageName'
           value: ${{env.IMAGE_NAME}}
           commitChange: true
