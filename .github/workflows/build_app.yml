@@ -71,8 +71,8 @@ jobs:
 
       - name: Update values.yaml
         run: |
-          FILE=$(find . -name "values.yaml" -type f | head -n 1)
-          yq -i ".imageName = \"\${{env.IMAGE_NAME}}\"" $FILE
+          TARGET_FILE="$(find . -name "values.yaml" -type f | head -n 1)"
+          yq -i ".imageName = \"\${{env.IMAGE_NAME}}\"" $TARGET_FILE
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v7
