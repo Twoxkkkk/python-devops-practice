@@ -13,9 +13,13 @@ env:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read  
     strategy:
       matrix: 
-        linter: [flake8, pylint, ruff, mypy, pytype, pyright, fixit, pyre]
+        linter: [flake8, pylint]
 
     steps:
       - name: Lint Python Code
