@@ -71,10 +71,8 @@ jobs:
 
       - name: Update values.yaml
         run: |
-          echo "$PWD"
-          cd k8s
-          ls -la
-          yq -i ".imageName = \"\${{env.IMAGE_NAME}}\"" values.yaml
+          FILE=$(find . -name "values.yaml" -type f | head -n 1)
+          yq -i ".imageName = \"\${{env.IMAGE_NAME}}\"" $FILE
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v7
