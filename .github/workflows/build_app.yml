@@ -64,7 +64,7 @@ jobs:
       - name: Update values.yaml with new image
         run: |
           echo "Updating imageName to: $IMAGE_NAME"
-          sed -i "s#^imageName:.*#imageName: ${IMAGE_NAME}#" values.yaml
+          sed -i "s#^imageName:.*#imageName: ${IMAGE_NAME}#" k8s/values.yaml
           cat values.yaml
         env:
           IMAGE_NAME: "${{env.IMAGE_NAME}}"
